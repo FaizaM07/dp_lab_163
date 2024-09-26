@@ -13,13 +13,13 @@ class Trip implements RideType, PaymentMethod {
         this.pickupLocation = pickupLocation;
         this.dropOffLocation = dropOffLocation;
         this.distance = distance;
-        this.fare = calculateFare(distance); // Using RideType's fare calculation
-        this.notificationService = new SMSNotification(); // Default notification
+        this.fare = calculateFare(distance); 
+        this.notificationService = new SMSNotification(); 
     }
 
     @Override
     public double calculateFare(double distance) {
-        return distance * 1.5; // Default fare calculation logic, can vary by RideType
+        return distance * 1.5; 
     }
 
     @Override
@@ -35,7 +35,7 @@ class Trip implements RideType, PaymentMethod {
     public void completeTrip() {
         System.out.println("Trip completed. Total fare: BDT " + fare);
         notificationService.sendNotification("Your trip is complete.");
-        processPayment(fare); // Using PaymentMethod's processPayment
+        processPayment(fare); 
         driver.completeTrip();
     }
 }
