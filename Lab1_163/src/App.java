@@ -1,5 +1,3 @@
-import java.sql.Driver;
-
 public class App {
     public static void main(String[] args) {
         PaymentMethod riderPayment = new CreditCard();
@@ -10,7 +8,7 @@ public class App {
         admin.manageDriver(driver);
         admin.manageRider(rider);
 
-        // No need to specify RideType explicitly, as Trip handles it internally now
+       
         rider.requestRide(driver, "Mirpur", "DMD", 10.5);
         
         rider.rateDriver(driver, 4.8);
