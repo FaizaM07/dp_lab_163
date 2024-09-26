@@ -1,5 +1,3 @@
-import java.sql.Driver;
-
 class Trip implements RideType, PaymentMethod {
     private Rider rider;
     private Driver driver;
