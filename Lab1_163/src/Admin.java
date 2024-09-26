@@ -1,5 +1,3 @@
-import java.sql.Driver;
-
 class Admin {
     public void manageDriver(Driver driver) {
         System.out.println("Managing driver: " + driver.getName());
