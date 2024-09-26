@@ -1,20 +1,21 @@
-interface NotificationService {
-    void sendNotification(String message);
+abstract class NotificationService {
+    public abstract void sendNotification(String message);
 }
 
-class SMSNotification implements NotificationService {
+// Concrete notification strategies
+class SMSNotification extends NotificationService {
     public void sendNotification(String message) {
         System.out.println("SMS: " + message);
     }
 }
 
-class EmailNotification implements NotificationService {
+class EmailNotification extends NotificationService {
     public void sendNotification(String message) {
         System.out.println("Email: " + message);
     }
 }
 
-class InAppNotification implements NotificationService {
+class InAppNotification extends NotificationService {
     public void sendNotification(String message) {
         System.out.println("In-App: " + message);
     }

@@ -1,24 +1,23 @@
 interface RideType {
-    double calculateFare(double distance, String timeOfDay);
+    public abstract double calculateFare(double distance);
 }
 
-class Carpool implements RideType {
-    public double calculateFare(double distance, String timeOfDay) {
-        // for carpool
+// Concrete ride strategies
+class Carpool implements  RideType {
+    public double calculateFare(double distance) {
         return distance * 0.5;
     }
 }
 
 class Luxury implements RideType {
-    public double calculateFare(double distance, String timeOfDay) {
-        // luxury rides er jonno higher
+    public double calculateFare(double distance) {
         return distance * 2.0;
     }
 }
 
 class Bike implements RideType {
-    public double calculateFare(double distance, String timeOfDay) {
-        // a bit lower
+    public double calculateFare(double distance) {
         return distance * 0.3;
     }
+
 }

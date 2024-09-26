@@ -1,3 +1,5 @@
+import java.sql.Driver;
+
 class Rider {
     private String id;
     private String name;
@@ -8,11 +10,11 @@ class Rider {
         this.id = id;
         this.name = name;
         this.preferredPaymentMethod = paymentMethod;
-        this.rating = 5.0; // set korlam just emniiiiiiii
+        this.rating = 5.0;
     }
 
-    public void requestRide(Driver driver, RideType rideType, String pickup, String dropOff, double distance, String timeOfDay) {
-        Trip trip = new Trip(this, driver, rideType, pickup, dropOff, distance, timeOfDay);
+    public void requestRide(Driver driver, String pickup, String dropOff, double distance) {
+        Trip trip = new Trip(this, driver, pickup, dropOff, distance);
         trip.startTrip();
         trip.completeTrip();
     }
@@ -22,11 +24,8 @@ class Rider {
         driver.updateRating(rating);
     }
 
-    public void makePayment(double amount) {
-        preferredPaymentMethod.processPayment(amount);
-    }
-
     public String getName() {
         return name;
     }
 }
+
