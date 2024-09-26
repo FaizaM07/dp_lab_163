@@ -1,5 +1,3 @@
-import java.sql.Driver;
-
 class Rider {
     private String id;
     private String name;
